@@ -15,19 +15,30 @@ public class CustomerConfig {
         return args -> {
             Customer kendrick = new Customer(
                 1l,
-                "Kendrick",
-                "kendrickdgomez@gmail.com",
-                LocalDate.of(2000, 6, 26)
+                LocalDate.of(2000, 6, 26), 
+                "kendrick@gmail.com", 
+                "kendrick", 
+                "test123"
             );
 
             Customer kevin = new Customer(
-                "Kevin",
-                "kevin@gmail.com",
-                LocalDate.of(2000, 7, 14)
+                null, 
+                LocalDate.of(2000, 8, 5),
+                "kev@gmail.com", 
+                "kevin", 
+                "test123"
+            );
+
+            Customer lyn = new Customer(
+                null, 
+                LocalDate.of(1996, 8, 5),
+                "lyn@gmail.com", 
+                "Lyn", 
+                "test123"
             );
 
             repository.saveAll(
-                List.of(kendrick, kevin)
+                List.of(kendrick, kevin, lyn)
             );
         };
     }

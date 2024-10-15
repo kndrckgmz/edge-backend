@@ -27,21 +27,48 @@ public class Customer {
     private String name;
     private String email;
     private LocalDate dob;
+    private String password;
 
     public Customer() {
     }
 
-    public Customer(Long accountId, String name, String email, LocalDate dob) {
+    public Customer(Long accountId, LocalDate dob, String email, String name, String password) {
         this.accountId = accountId;
-        this.name = name;
-        this.email = email;
         this.dob = dob;
+        this.email = email;
+        this.name = name;
+        this.password = password;
     }
 
     public Customer(String name, String email, LocalDate dob) {
         this.name = name;
         this.email = email;
         this.dob = dob;
+    }
+
+    public Customer accountId(Long accountId) {
+        setAccountId(accountId);
+        return this;
+    }
+
+    public Customer name(String name) {
+        setName(name);
+        return this;
+    }
+
+    public Customer email(String email) {
+        setEmail(email);
+        return this;
+    }
+
+    public Customer dob(LocalDate dob) {
+        setDob(dob);
+        return this;
+    }
+
+    public Customer password(String password) {
+        setPassword(password);
+        return this;
     }
 
     public Long getAccountId() {
@@ -76,24 +103,12 @@ public class Customer {
         this.dob = dob;
     }
 
-    public Customer accountId(Long accountId) {
-        setAccountId(accountId);
-        return this;
+    public String getPassword() {
+        return this.password;
     }
 
-    public Customer name(String name) {
-        setName(name);
-        return this;
-    }
-
-    public Customer email(String email) {
-        setEmail(email);
-        return this;
-    }
-
-    public Customer dob(LocalDate dob) {
-        setDob(dob);
-        return this;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
